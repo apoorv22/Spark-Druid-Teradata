@@ -1,8 +1,8 @@
-package com.scienaptic.dataingestion
+package com.scienaptic.sparkdruidteradata
 
 import java.util.Properties
 
-import com.scienaptic.dataingestion.utils.SparkUtils
+import com.scienaptic.sparkdruidteradata.utils.SparkUtils
 
 object TeraData {
 

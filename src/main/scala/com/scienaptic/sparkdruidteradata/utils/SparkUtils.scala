@@ -1,4 +1,4 @@
-package com.scienaptic.dataingestion.utils
+package com.scienaptic.sparkdruidteradata.utils
 
 import org.apache.spark.sql.{SQLContext, SparkSession}
 

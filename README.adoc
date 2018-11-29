@@ -1,0 +1,35 @@
+# Spark-Druid-Teradata
+Read/write data from/to teradata and read from druid
+
+###Teradata Setup
+
+- Download VMware WorkStation from link:https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0[here]
+
+- Download Teradata express VMware image from link:http://d289lrf5tw1zls.cloudfront.net/database/teradata-express/TDExpress16.20_Sles11_20181108052529.7z?Expires=1545229073&Signature=Hn3Hl45xWbcBfOLqsC7E2u98YZfYwcHFeKpTDzLmVS~yl18Vq08J9~lrqzfi3yprClYMeyXsIWgDbbnf1PLSHw5zjUIswPqtV6L3hSaTxrvIp~jueNzw8RLKf-VLUQlzBo2ZOOxIfGfXFOiROlQ4cVpjnTRhfCkjdhsGCkz3L7yL25wEJdRRZ-8jzODam7HagKXMKOiIoNHxS5wAcDKJ0MSHMu8KXeJ6WlAS9Vld9rLo0kQeTo-~VqlLsaStfwwu95fnDbs2W2rJJaguEyZV9v6BV8lZ1sgQbq4aNi-SjrhBIw~oEbqjndENKQQOG7nKQADoIn3JotyueYViyh4KmA__&Key-Pair-Id=APKAJ3SWQUPWKYVMO2WQ[here]
+
+- Follow the steps from link:https://www.tutorialspoint.com/teradata/teradata_installation.htm[here] to install and run teradata
+
+- Jars for jdbc drivers are available in `lib` folder
+
+- Make sure to put this line in `build.sbt`
+
+      exportJars := true
+
+- Make note of th IP of virtual machine and use the jdbc url as
+    `jdbc:teradata://<IP>/<dbname>`
+
+
+###Druid Setup
+
+- Follow link:http://druid.io/docs/latest/tutorials/index.html[this] tutorial for druid setup on your machine
+
+- Add this line to `druid-0.12.3/conf-quickstart/druid/broker/runtime.properties` file
+
+        druid.sql.enable = true
+
+- Add this dependency to `build.sbt`
+
+        "org.apache.calcite.avatica" % "avatica-server" % 1.12.0
+                                                    excludeAll ExclusionRule(organization = "com.fasterxml.jackson.core")
+        "org.apache.calcite.avatica" % "avatica-core" % 1.12.0
+                                                            excludeAll ExclusionRule(organization = "com.fasterxml.jackson.core")
