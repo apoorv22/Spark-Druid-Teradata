@@ -1,7 +1,7 @@
 # Spark-Druid-Teradata
 Read/write data from/to teradata and read from druid
 
-###Teradata Setup
+### Teradata Setup
 
 - Download VMware WorkStation from link:https://my.vmware.com/en/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0[here]
 
@@ -19,7 +19,7 @@ Read/write data from/to teradata and read from druid
     `jdbc:teradata://<IP>/<dbname>`
 
 
-###Druid Setup
+### Druid Setup
 
 - Follow link:http://druid.io/docs/latest/tutorials/index.html[this] tutorial for druid setup on your machine
 
